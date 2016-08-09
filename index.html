@@ -46,8 +46,9 @@
   </div>
 </section>
 <section id="player1Name" class="hidden">
-  <div class="row playerName">
-    <input type="text" name="player1Name" id="player1Name" class="playerName" placeHolder="Choose your Robot Name">
+  <div class="row">
+    <input type="text" name="player1Name" id="player1Name" class="playerName" placeHolder="Choose your Robot Name" required>
+    <button id="player1submit" class="submit">Player 1 Ready</button>
   </div>
 </section>
 <section id="player2View" class="hidden">
@@ -87,7 +88,21 @@
 </section>
 <section id="player2Name" class="hidden">
   <div class="row">
-    <input type="text" name="player2Name" id="player2Name" class="playerName" placeHolder="Choose your Robot Name">
+    <input type="text" name="player2Name" id="player2Name" class="playerName" placeHolder="Choose your Robot Name" required>
+    <button id="player2submit" class="submit">Player 2 Ready</button>
+  </div>
+</section>
+<section id="battleView" class="hidden">
+  <div class="row">
+    <div class="col-sm-3 player1bot">
+      <h3> Player 1 </h3>
+    </div> 
+    <div class="col-sm-6 battlefield">
+      <h2> Battle Field </h2>
+    </div>
+    <div class="col-sm-3 player2bot">
+      <h3> Player 2 </h3>
+    </div>
   </div>
 </section>
 </div>

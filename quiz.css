@@ -1,6 +1,8 @@
+body {
+  text-align: center;
+}
 h1 {
   color: red;
-  text-align: center;
 }
 
 .robotImg {
@@ -16,19 +18,23 @@ h1 {
   margin: 3% 3%;
 }
 
-.playerSelection {
+/*.playerSelection {
   text-align: center;
-}
+}*/
 
 .player h3 {
-  text-align: center;
   padding: 10px;
 }
 
 .playerName {
   display: block;
-  margin: 0 auto;
+  margin: 3% auto;
   width: 50%;
+}
+
+.submit {
+  display: block;
+  margin: 10px auto;
 }
 
 .hidden {
@@ -37,5 +43,13 @@ h1 {
 
 .selected {
   display: block;
+}
+
+.battlefield {
+  background-color: rgba(25, 173, 110, 0.6);
+  box-shadow: 2px 2px 2px 5px#aaa;
+  border-radius: 5px;
+  height: 500px;
+  max-width: 100%;
 }
 
