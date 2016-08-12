@@ -4,7 +4,30 @@ body {
 h1 {
   color: red;
 }
+/*Card Styling*/
+.card {
+  display: none;
+}
 
+.card__prompt {
+  font-size: 1.1em;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.card__button {
+  font-size: 1.1em;
+  margin: 30px 0 0 0;
+  text-align: center;
+}
+
+/* Hidden Weapons */
+.hidden {
+  display: none;
+}
+
+/*Robot and Weapon Image Styling*/
 .robotImg {
   display: block;
   height: 200px;
@@ -12,6 +35,7 @@ h1 {
   margin: 0 auto;
   box-shadow: 2px 2px 2px 5px#aaa;
   border-radius: 5px;
+  padding: 5%;
 }
 
 .robotRow {
@@ -37,13 +61,6 @@ h1 {
   margin: 10px auto;
 }
 
-.hidden {
-  display: none;
-}
-
-.selected {
-  display: block;
-}
 
 .battlefield {
   background-color: rgba(25, 173, 110, 0.6);
@@ -52,4 +69,49 @@ h1 {
   height: 500px;
   max-width: 100%;
 }
+
+.attack {
+  display: block;
+  margin: 95% auto 2%;
+  font-size: 1.5em;
+  padding: 2%;
+}
+
+/*.card {
+  display: none;
+}*/
+
+.hidden {
+  display: none;
+}
+
+.selectedRobot {
+  height: 250px;
+  max-width: 85%;
+  box-shadow: 4px 4px 4px 10px #555;
+  border-radius: 5px;
+}
+
+/*.robot { 
+   position: relative;
+   width: 100%; /* for IE 6 */
+/*}*/
+
+.description { 
+  position: absolute; 
+  top: 0%; 
+  left: 25%; 
+  z-index: 10;
+  display: block;
+  height: 200px;
+  max-width: 50%;
+  margin: 0 auto;
+  background-color: rgba(112, 170, 211, 0.5);
+  padding: 20px;
+}
+
+.backgroundRobot {
+  opacity: 0.3;
+}
+
 
