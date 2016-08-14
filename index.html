@@ -63,7 +63,7 @@
         </div>
       </div>
       <div class="card__button">
-          <a class="card__link btn btn--big btn--orange"
+          <a class="card__link btn btn--big btn--orange weapon--button1"
              href="#"
              next="card--weapons">
             <span class="btn__prompt">></span>
@@ -86,17 +86,17 @@
       <div class="row weaponSelection">
         <h3> Player 1: <small> Choose your Weapon </small> </h3>
       </div>
-      <div class="RosieWeapons row">
+      <div class="RosieWeapons weapons row hidden">
       </div>
-      <div class="WallEWeapons row">
+      <div class="WallEWeapons weapons row hidden">
       </div>
-      <div class="C3POWeapons row">
+      <div class="C3POWeapons weapons row hidden">
       </div>
-      <div class="HectorWeapons row">
+      <div class="HectorWeapons weapons row hidden">
       </div>
-      <div class="DroneWeapons row">
+      <div class="DroneWeapons weapons row hidden">
       </div>
-      <div class="ParrotWeapons row">
+      <div class="ParrotWeapons weapons row hidden">
       </div>
       <div class="card__button">
         <a class="card__link btn btn--big btn--orange"
@@ -170,7 +170,7 @@
         </div>
       </div>
       <div class="card__button">
-        <a class="card__link btn btn--big btn--orange"
+        <a class="card__link btn btn--big btn--orange weapon--button2"
            href="#"
            next="card--weapons2">
           <span class="btn__prompt">></span>
@@ -193,20 +193,20 @@
       <div class="row weaponSelection">
         <h3> Player 2: <small> Choose your Weapon </small> </h3>
       </div>
-      <div class="RosieWeapons2 row">
+      <div class="RosieWeapons2 weapons row hidden">
       </div>
-      <div class="WallEWeapons2 row">
+      <div class="WallEWeapons2 weapons row hidden">
       </div>
-      <div class="C3POWeapons2 row">
+      <div class="C3POWeapons2 weapons row hidden">
       </div>
-      <div class="HectorWeapons2 row">
+      <div class="HectorWeapons2 weapons row hidden">
       </div>
-      <div class="DroneWeapons2 row">
+      <div class="DroneWeapons2 weapons row hidden">
       </div>
-      <div class="ParrotWeapons2 row">
+      <div class="ParrotWeapons2 weapons row hidden">
       </div>
       <div class="card__button">
-        <a class="card__link btn btn--big btn--orange"
+        <a class="card__link btn btn--big btn--orange battle--button"
            href="#"
            next="card--battle">
           <span class="btn__prompt">></span>
@@ -217,25 +217,26 @@
 </section>
 <section id="battleView" class="battleView card card--battle">
   <div class="row">
-    <div class="col-sm-3 player1bot">
+    <div class="col-xs-4 player1bot">
       <h3> Player 1 </h3>
     </div>
-    <div class="col-sm-6 battlefield">
+    <div class="col-xs-4 battlefield">
       <h2> Battle Field </h2>
       <button class="attack"> Attack! </button>
     </div>
-    <div class="col-sm-3 player2bot">
+    <div class="col-xs-4 player2bot">
       <h3> Player 2 </h3>
     </div>
   </div>
 </section>
 <script src="bower_components/jquery/dist/jquery.min.js"></script>
-<script type="text/javascript" src="sort.js"></script>
-<script type="text/javascript" src="robots.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="constructor.js"></script>
-<script type="text/javascript" src="controller.js"></script>
-<script type="text/javascript" src="printRobots.js"></script>
+<script type="text/javascript" src="robots.js"></script>
+<script type="text/javascript" src="printItems.js"></script>
+<script type="text/javascript" src="weapons.js"></script>
 <script type="text/javascript" src="cards.js"></script>
+<script type="text/javascript" src="controller.js"></script>
 <script type="text/javascript" src="loadRobots.js"></script>
 </body>
 </html>
