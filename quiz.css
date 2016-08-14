@@ -1,9 +1,11 @@
+/*Global Styles*/
 body {
   text-align: center;
 }
 h1 {
   color: red;
 }
+
 /*Card Styling*/
 .card {
   display: none;
@@ -77,27 +79,15 @@ h1 {
   padding: 2%;
 }
 
-/*.card {
-  display: none;
-}*/
 
-.hidden {
-  display: none;
-}
-
-.selectedRobot {
+.selectedItem {
   height: 250px;
   max-width: 85%;
   box-shadow: 4px 4px 4px 10px #555;
   border-radius: 5px;
 }
 
-/*.robot { 
-   position: relative;
-   width: 100%; /* for IE 6 */
-/*}*/
-
-.description { 
+/*.description {
   position: absolute; 
   top: 0%; 
   left: 25%; 
@@ -108,7 +98,7 @@ h1 {
   margin: 0 auto;
   background-color: rgba(112, 170, 211, 0.5);
   padding: 20px;
-}
+}*/
 
 .backgroundRobot {
   opacity: 0.3;

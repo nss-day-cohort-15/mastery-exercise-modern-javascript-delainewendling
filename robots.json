@@ -6,7 +6,7 @@
     "description": "Rosie's health is between 100 and 150, her strength is between 6 and 10, and she has access to the Duster, Broom, Mop, and Spray Cleaner weapons"
     },
     {
-    "robotName": "Wall-E",
+    "robotName": "WallE",
     "robotImg": "images/wallE.jpg",
     "description": "Wall-E's health is between 100 and 150, his strength is between 5 and 8, and he has access to the Aluminum Can, Battery Acid, Rusty Knife, and Banana Peel weapons"
     },

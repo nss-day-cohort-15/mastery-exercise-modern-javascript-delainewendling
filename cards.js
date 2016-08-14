@@ -1,6 +1,6 @@
 
 $(document).ready(function(){
-  // Try a new approach
+
   $("#player-setup").show();
   /*
     When any button with card__link class is clicked,
@@ -8,7 +8,6 @@ $(document).ready(function(){
    */
   $(".card__link").click(function(e) {
     var nextCard = $(this).attr("next");
-    console.log("next card", nextCard)
     var moveAlong = false;
 
     switch (nextCard) {
@@ -17,12 +16,14 @@ $(document).ready(function(){
         break;
       case "card--weapons":
         moveAlong = ($("#player1-name").val() !== "")
+        // BattleDome.sortWeapons()
         break;
       case "card--name2":
         moveAlong = ($("#player1-name").val() !== "")
         break;
       case "card--robots2":
         moveAlong = ($("#player2-name").val() !== "");
+        // BattleDome.sortWeapons()
         break;
       case "card--weapons2":
         moveAlong = ($("#player2-name").val() !== "");

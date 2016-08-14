@@ -123,7 +123,7 @@
     {
       "weaponName": "Grenade",
       "weaponImg": "images/grenade.jpg",
-      "description": "The Grenade deals a damage between 43 and 47",
+      "description": "The Grenade deals a damage between 41 and 46",
       "weaponContainer": "ParrotWeapons"
     },
     {
