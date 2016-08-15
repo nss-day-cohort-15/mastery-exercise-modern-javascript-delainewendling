@@ -9,16 +9,17 @@ var BattleDome = (function(robots){
     this.strength = null;
     this.robot = null;
     this.weapon = null;
+    this.baseDamage = null;
     this.damage = null;
 
     this.name = name || "unknown player";
   }
 
   robots.Robot.Player.prototype.attack = function(target){
-    var damage = this.damage + Math.round(Math.random()*20)-10;
+    var damage = this.baseDamage + Math.round(Math.random()*10);
     this.damage = damage
     target.health -= damage
-    // return target.health
+    return target.health
   }
 
   return robots

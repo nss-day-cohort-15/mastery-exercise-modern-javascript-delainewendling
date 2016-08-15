@@ -3,9 +3,9 @@ var BattleDome = (function(weapons){
   weapons.Armory = {}
 
   weapons.Armory.Weapon = function(){
-    this.healthBonus = 0;
     this.evasion = 0;
     this.damage = 0;
+    this.healthBonus = 0;
   }
 
   // Rosie Weapons

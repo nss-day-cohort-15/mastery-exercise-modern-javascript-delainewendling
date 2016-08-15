@@ -66,9 +66,9 @@ var BattleDome = (function(controller){
     player1 = new BattleDome.Robot.Player(_player1name)
     player1.robot = new BattleDome.Factory[_robot1]()
     player1.weapon = new BattleDome.Armory[weapon1]()
-    player1.initalHealth += player1.robot.health + player1.weapon.healthBonus
+    player1.initialHealth += player1.robot.health + player1.weapon.healthBonus
     player1.health += player1.robot.health + player1.weapon.healthBonus
-    player1.damage += player1.robot.strength + player1.weapon.damage
+    player1.baseDamage += player1.robot.strength + player1.weapon.damage
     console.log("player 1", player1)
     console.log("player 1 damage", player1.damage)
     printPlayerStats(_player1name, _robot1, _weapon1, player1.health, 1)
@@ -80,9 +80,9 @@ var BattleDome = (function(controller){
     player2 = new BattleDome.Robot.Player(_player2name)
     player2.robot = new BattleDome.Factory[_robot2]()
     player2.weapon = new BattleDome.Armory[weapon2]()
-    player2.initalHealth += player2.robot.health + player2.weapon.healthBonus
+    player2.initialHealth += player2.robot.health + player2.weapon.healthBonus
     player2.health += player2.robot.health + player2.weapon.healthBonus
-    player2.damage += player1.robot.strength + player2.weapon.damage
+    player2.baseDamage += player2.robot.strength + player2.weapon.damage
     console.log("player 2", player2)
     console.log("player 2 damage", player2.damage)
     printPlayerStats(_player2name, _robot2, _weapon2, player2.health, 2)
@@ -121,7 +121,6 @@ var BattleDome = (function(controller){
   //     }
   //   } else if (player2.weapon.evasion > 0){
   //     if (evadeAttacks === 1){
-        
   //       player2.weapon.evasion --
   //     }
   //   } else {
