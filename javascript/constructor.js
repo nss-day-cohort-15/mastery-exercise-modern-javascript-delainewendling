@@ -8,6 +8,7 @@ var BattleDome = (function(robots){
     this.strength = null;
     this.robot = null;
     this.weapon = null;
+    this.damage = null;
 
     this.name = name || "unknown player";
   }
