@@ -13,103 +13,118 @@ var BattleDome = (function(controller){
   var newPlayer1Health;
   var newPlayer2Health;
 
-  $(".name1").on("click", getPlayer1Name)
-  $(".name2").on("click", getPlayer2Name)
-  $(".robot1").on("click", getPlayer1Robot)
-  $(".robot2").on("click", getPlayer2Robot)
-  $(".weapon--button1").on("click", sortWeapons1)
-  $(".weapon--button2").on("click", sortWeapons2)
+  $(".name1").on("click", getPlayer1Name);
+  $(".name2").on("click", getPlayer2Name);
+  $(".robot1").on("click", getPlayer1Robot);
+  $(".robot2").on("click", getPlayer2Robot);
+  $(".weapon--button1").on("click", sortWeapons1);
+  $(".weapon--button2").on("click", sortWeapons2);
   $(".battle--button").on("click", createPlayer1)
-  $(".attack").on("click", battleFieldAttack)
+  $(".attack").on("click", battleFieldAttack);
+  $(".restart").on("click", restart)
+  $(".fightAgain").on("click", fightAgain)
 
   function getPlayer1Name (){
-    _player1name = $("#player1-name").val()
-    console.log("player 1", _player1name)
-  }
+    _player1name = $("#player1-name").val();
+    console.log("player 1", _player1name);
+  };
 
   function getPlayer2Name () {
-    _player2name = $("#player2-name").val()
-    console.log("player 2", _player2name)
-  }
+    _player2name = $("#player2-name").val();
+    console.log("player 2", _player2name);
+  };
 
   function getPlayer1Robot (e){
-    changeSelectedClass(e.currentTarget.children[0], "robot")
-    _robot1 = e.currentTarget.classList[0]
-    console.log("robot 1", _robot1)
-  }
+    changeSelectedClass(e.currentTarget.children[0], "robot");
+    _robot1 = e.currentTarget.classList[0];
+    console.log("robot 1", _robot1);
+  };
 
   function getPlayer2Robot (e){
-    changeSelectedClass(e.currentTarget.children[0], "robot")
-    _robot2 = e.currentTarget.classList[0]
-    console.log("robot 2", _robot2)
-  }
+    changeSelectedClass(e.currentTarget.children[0], "robot");
+    _robot2 = e.currentTarget.classList[0];
+    console.log("robot 2", _robot2);
+  };
 
   function changeSelectedClass (target, name) {
-    $(`.${name}`).removeClass("selectedItem")
-    $(target).addClass("selectedItem")
-  }
+    $(`.${name}`).removeClass("selectedItem");
+    $(target).addClass("selectedItem");
+  };
 
   function sortWeapons1 (){
-    console.log("robot 1", _robot1)
-    $(".weapons").removeClass("selectedRobot")
-    $(`.${_robot1}Weapons`).removeClass("hidden").addClass("selectedWeapons")
-  }
+    console.log("robot 1", _robot1);
+    $(".weapons").removeClass("selectedRobot");
+    $(`.${_robot1}Weapons`).removeClass("hidden").addClass("selectedWeapons");
+  };
 
   function sortWeapons2 (){
-    console.log("robot 2", _robot2)
-    $(".weapons").removeClass("selectedRobot")
-    $(`.${_robot2}Weapons2`).removeClass("hidden").addClass("selectedWeapons")
-  }
+    console.log("robot 2", _robot2);
+    $(".weapons").removeClass("selectedRobot");
+    $(`.${_robot2}Weapons2`).removeClass("hidden").addClass("selectedWeapons");
+  };
 
   function createPlayer1 (){
-    var weapon1 = _weapon1.split("-").join("")
-    player1 = new BattleDome.Robot.Player(_player1name)
-    player1.robot = new BattleDome.Factory[_robot1]()
-    player1.weapon = new BattleDome.Armory[weapon1]()
-    player1.initialHealth += player1.robot.health + player1.weapon.healthBonus
-    player1.health += player1.robot.health + player1.weapon.healthBonus
-    player1.baseDamage += player1.robot.strength + player1.weapon.damage
-    console.log("player 1", player1)
-    console.log("player 1 damage", player1.damage)
-    printPlayerStats(_player1name, _robot1, _weapon1, player1.health, 1)
-    createPlayer2()
-  }
+    var weapon1 = _weapon1.split("-").join("");
+    player1 = new BattleDome.Robot.Player(_player1name);
+    player1.robot = new BattleDome.Factory[_robot1]();
+    player1.weapon = new BattleDome.Armory[weapon1]();
+    player1.initialHealth += player1.robot.health + player1.weapon.healthBonus;
+    player1.health += player1.robot.health + player1.weapon.healthBonus;
+    player1.baseDamage += player1.robot.strength + player1.weapon.damage;
+    console.log("player 1", player1);
+    console.log("player 1 damage", player1.damage);
+    printPlayerStats(_player1name, _robot1, _weapon1, player1.health, 1);
+    createPlayer2();
+  };
 
   function createPlayer2 (){
-    var weapon2 = _weapon2.split("-").join("")
-    player2 = new BattleDome.Robot.Player(_player2name)
-    player2.robot = new BattleDome.Factory[_robot2]()
-    player2.weapon = new BattleDome.Armory[weapon2]()
-    player2.initialHealth += player2.robot.health + player2.weapon.healthBonus
-    player2.health += player2.robot.health + player2.weapon.healthBonus
-    player2.baseDamage += player2.robot.strength + player2.weapon.damage
-    console.log("player 2", player2)
-    console.log("player 2 damage", player2.damage)
-    printPlayerStats(_player2name, _robot2, _weapon2, player2.health, 2)
-  }
+    var weapon2 = _weapon2.split("-").join("");
+    player2 = new BattleDome.Robot.Player(_player2name);
+    player2.robot = new BattleDome.Factory[_robot2]();
+    player2.weapon = new BattleDome.Armory[weapon2]();
+    player2.initialHealth += player2.robot.health + player2.weapon.healthBonus;
+    player2.health += player2.robot.health + player2.weapon.healthBonus;
+    player2.baseDamage += player2.robot.strength + player2.weapon.damage;
+    console.log("player 2", player2);
+    console.log("player 2 damage", player2.damage);
+    printPlayerStats(_player2name, _robot2, _weapon2, player2.health, 2);
+  };
+
 
   function printPlayerStats (name, robot, weapon, playerHealth, number){
-      $(`.player${number}bot`).append(`<h1> ${name} </h1> <p> A ${robot} robot wielding a ${weapon}.`)
-      $(`.player${number}Health`).html(`<h3> HEALTH: <small> ${playerHealth} </h3>`)
-  }
+      $(`.player${number}bot`).html(`<h1> ${name} </h1> <p> A ${robot} robot wielding a ${weapon}.`);
+      $(`.player${number}Health`).html(`<h3> HEALTH: <small> ${playerHealth} </h3>`);
+  };
 
   function updateHealth (playerHealth, number){
-    $(`.player${number}Health`).html(`<h3> HEALTH: <small> ${playerHealth} </h3>`)
-  }
+    $(`.player${number}Health`).html(`<h3> HEALTH: <small> ${playerHealth} </h3>`);
+  };
 
   // function showImage (){
 
   // }
 
   function battleFieldAttack (){
-    console.log("inside battle function")
-    player1.attack(player2)
-    player2.attack(player1)
-    console.log("player 1 health", player1.health)
-    console.log("player 2 health", player2.health)
-    updateHealth(player1.health, 1)
-    updateHealth(player2.health, 2)
-    checkHealth(player1.health, player2.health)
+    console.log("inside battle function");
+    player1.attack(player2);
+    player2.attack(player1);
+    console.log("player 1 health", player1.health);
+    console.log("player 2 health", player2.health);
+    updateHealth(player1.health, 1);
+    updateHealth(player2.health, 2);
+    checkHealth(player1.health, player2.health);
+  };
+
+  function restart(){
+    location.reload()
+  }
+
+  function fightAgain(){
+    $('#endModal').modal("hide");
+    player1.health = player1.initialHealth
+    player2.health = player2.initialHealth
+    printPlayerStats(_player1name, _robot1, _weapon1, player1.health, 1)
+    printPlayerStats(_player2name, _robot2, _weapon2, player2.health, 2)
   }
 
   // function evadeAttack(){
@@ -129,50 +144,50 @@ var BattleDome = (function(controller){
   // }
 
   function showAttack(damage1, player1Name, damage2, player2Name){
-    $('#damageModal').modal("show")
-    $(".modal-title").html("<h2> Ouch! </h2>")
-    $(".modal-body").html(`<p> ${player1Name} dealt ${damage1} damage </p> <p> ${player2Name} dealt ${damage2} damage </p>`)
+    $('#damageModal').modal("show");
+    $(".modal-title").html("<h2> Ouch! </h2>");
+    $(".modal-body").html(`<p> ${player1Name} dealt ${damage1} damage </p> <p> ${player2Name} dealt ${damage2} damage </p>`);
     // $('#damageModal').on('hidden.bs.modal', nextFunction)
-  }
+  };
 
   function checkHealth(player1Health, player2Health){
     if (player1Health <= 0 && player1Health < player2Health){
-      console.log("player 2 is the winner")
-      $('#endModal').modal("show")
-      $(".modal-title").html(`${player2.name} is the Winner!`)
-      $(".modal-body").html(`<p> ${player1.name}'s health: ${player1.health}</p> <p> ${player2.name} health: ${player2.health}</p>`)
+      console.log("player 2 is the winner");
+      $('#endModal').modal("show");
+      $(".modal-title").html(`${player2.name} is the Winner!`);
+      $(".modal-body").html(`<p> ${player1.name}'s health: ${player1.health}</p> <p> ${player2.name} health: ${player2.health}</p>`);
     } else if (player1Health <=0 && player1Health === player2Health){
-      console.log("Tie")
-      $('#endModal').modal("show")
-      $(".modal-title").html("It was a tie!")
-      $(".modal-body").html(`<p> ${player1.name}'s health: ${player1.health}</p> <p> ${player2.name} health: ${player2.health}</p>`)
+      console.log("Tie");
+      $('#endModal').modal("show");
+      $(".modal-title").html("It was a tie!");
+      $(".modal-body").html(`<p> ${player1.name}'s health: ${player1.health}</p> <p> ${player2.name} health: ${player2.health}</p>`);
     } else if (player2Health <=0 && player2Health < player1Health) {
-      console.log("player 1 is the winner")
-      $('#endModal').modal("show")
-      $(".modal-title").html(`${player1.name} is the Winner!`)
-      $(".modal-body").html(`<p> ${player1.name}'s health: ${player1.health}</p> <p> ${player2.name} health: ${player2.health}</p>`)
+      console.log("player 1 is the winner");
+      $('#endModal').modal("show");
+      $(".modal-title").html(`${player1.name} is the Winner!`);
+      $(".modal-body").html(`<p> ${player1.name}'s health: ${player1.health}</p> <p> ${player2.name} health: ${player2.health}</p>`);
     } else {
-      showAttack(player1.damage, player1.name, player2.damage, player2.name)
+      showAttack(player1.damage, player1.name, player2.damage, player2.name);
     }
   }
 
   controller.getPlayer1Weapon = function(e){
-    console.log("player 1 weapon", e.currentTarget.classList[0])
-    console.log("target", e.currentTarget)
-    changeSelectedClass(e.currentTarget, "weapon")
-    _weapon1 = e.currentTarget.classList[0]
-    console.log("weapon 1", _weapon1)
-  }
+    console.log("player 1 weapon", e.currentTarget.classList[0]);
+    console.log("target", e.currentTarget);
+    changeSelectedClass(e.currentTarget, "weapon");
+    _weapon1 = e.currentTarget.classList[0];
+    console.log("weapon 1", _weapon1);
+  };
 
   controller.getPlayer2Weapon = function(e){
-    console.log("player 2 weapon", e.currentTarget.classList[0])
-    changeSelectedClass(e.currentTarget, "weapon")
-    _weapon2 = e.currentTarget.classList[0]
+    console.log("player 2 weapon", e.currentTarget.classList[0]);
+    changeSelectedClass(e.currentTarget, "weapon");
+    _weapon2 = e.currentTarget.classList[0];
     console.log("weapon 2", _weapon2)
   }
-  return controller
+  return controller;
 
-})(BattleDome || {})
+})(BattleDome || {});
 
 
 

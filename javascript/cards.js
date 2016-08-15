@@ -15,11 +15,11 @@ $(document).ready(function(){
         moveAlong = ($("#player1-name").val() !== "");
         break;
       case "card--weapons":
-        moveAlong = ($("#player1-name").val() !== "")
+        moveAlong = ($("#player1-name").val() !== "");
         // BattleDome.sortWeapons()
         break;
       case "card--name2":
-        moveAlong = ($("#player1-name").val() !== "")
+        moveAlong = ($("#player1-name").val() !== "");
         break;
       case "card--robots2":
         moveAlong = ($("#player2-name").val() !== "");

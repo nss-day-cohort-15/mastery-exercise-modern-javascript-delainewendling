@@ -19,6 +19,7 @@
     "bootstrap": "^3.3.7"
   },
   "devDependencies": {
-    "jasmine-core": "jasmine#^2.4.1"
+    "jasmine-core": "jasmine#^2.4.1",
+    "gulp": "^3.9.1"
   }
 }

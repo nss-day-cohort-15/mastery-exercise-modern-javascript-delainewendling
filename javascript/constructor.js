@@ -1,6 +1,6 @@
 var BattleDome = (function(robots){
 
-  robots.Robot = {}
+  robots.Robot = {};
 
   //Robot Constructor Function
   robots.Robot.Player = function(name){
@@ -13,15 +13,15 @@ var BattleDome = (function(robots){
     this.damage = null;
 
     this.name = name || "unknown player";
-  }
+  };
 
   robots.Robot.Player.prototype.attack = function(target){
     var damage = this.baseDamage + Math.round(Math.random()*10);
-    this.damage = damage
-    target.health -= damage
-    return target.health
-  }
+    this.damage = damage;
+    target.health -= damage;
+    return target.health;
+  };
 
-  return robots
+  return robots;
 
-})(BattleDome || {})
+})(BattleDome || {});

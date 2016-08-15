@@ -8,13 +8,13 @@ var BattleDome = (function(robots){
     .then(function(res){
         robotArray = res[0].robots;
         weaponArray = res[1].weapons;
-        BattleDome.printRobots(robotArray)
-        BattleDome.printWeapons(weaponArray)
-    })
-  }
+        BattleDome.printRobots(robotArray);
+        BattleDome.printWeapons(weaponArray);
+    });
+  };
 
-  return robots
+  return robots;
 
-})(BattleDome || {})
+})(BattleDome || {});
 
-BattleDome.loadItems()
+BattleDome.loadItems();
