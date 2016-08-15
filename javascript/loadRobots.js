@@ -2,8 +2,8 @@ var BattleDome = (function(robots){
 
   robots.loadItems = function(){
     Promise.all([
-      $.getJSON('robots.json'),
-      $.getJSON('weapons.json')
+      $.getJSON('JSON/robots.json'),
+      $.getJSON('JSON/weapons.json')
       ])
     .then(function(res){
         robotArray = res[0].robots;

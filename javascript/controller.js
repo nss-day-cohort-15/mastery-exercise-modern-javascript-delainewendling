@@ -20,7 +20,7 @@ var BattleDome = (function(controller){
   $(".weapon--button1").on("click", sortWeapons1)
   $(".weapon--button2").on("click", sortWeapons2)
   $(".battle--button").on("click", createPlayer1)
-  $(".attack").on("click", evadeAttack)
+  $(".attack").on("click", battleFieldAttack)
 
   function getPlayer1Name (){
     _player1name = $("#player1-name").val()
@@ -66,10 +66,12 @@ var BattleDome = (function(controller){
     player1 = new BattleDome.Robot.Player(_player1name)
     player1.robot = new BattleDome.Factory[_robot1]()
     player1.weapon = new BattleDome.Armory[weapon1]()
+    player1.initalHealth += player1.robot.health + player1.weapon.healthBonus
     player1.health += player1.robot.health + player1.weapon.healthBonus
     player1.damage += player1.robot.strength + player1.weapon.damage
-    var player1Health = player1.robot.health + player1.weapon.healthBonus
-    printPlayerStats(_player1name, _robot1, _weapon1, player1Health, 1)
+    console.log("player 1", player1)
+    console.log("player 1 damage", player1.damage)
+    printPlayerStats(_player1name, _robot1, _weapon1, player1.health, 1)
     createPlayer2()
   }
 
@@ -78,55 +80,54 @@ var BattleDome = (function(controller){
     player2 = new BattleDome.Robot.Player(_player2name)
     player2.robot = new BattleDome.Factory[_robot2]()
     player2.weapon = new BattleDome.Armory[weapon2]()
+    player2.initalHealth += player2.robot.health + player2.weapon.healthBonus
     player2.health += player2.robot.health + player2.weapon.healthBonus
     player2.damage += player1.robot.strength + player2.weapon.damage
-    var player2Health = player2.robot.health + player2.weapon.healthBonus
-    console.log("player 2 so far", player2)
-    printPlayerStats(_player2name, _robot2, _weapon2, player2Health, 2)
+    console.log("player 2", player2)
+    console.log("player 2 damage", player2.damage)
+    printPlayerStats(_player2name, _robot2, _weapon2, player2.health, 2)
   }
 
   function printPlayerStats (name, robot, weapon, playerHealth, number){
-      $(`.player${number}bot`).html(`<h1> ${name} </h1> <p> A ${robot} robot wielding a ${weapon} </p> <h3> HEALTH: <small> ${playerHealth} </h3>`)
+      $(`.player${number}bot`).append(`<h1> ${name} </h1> <p> A ${robot} robot wielding a ${weapon}.`)
+      $(`.player${number}Health`).html(`<h3> HEALTH: <small> ${playerHealth} </h3>`)
   }
 
-  function showImage (){
-
+  function updateHealth (playerHealth, number){
+    $(`.player${number}Health`).html(`<h3> HEALTH: <small> ${playerHealth} </h3>`)
   }
 
-  function attack () {
-    player2Damage = player2.damage + randomDamage()
-    newPlayer1Health = player1.health - (player2Damage)
-    player1.health = newPlayer1Health
-    printPlayerStats(_player1name, _robot1, _weapon1, newPlayer1Health, 1)
-    player1Damage = player1.damage + randomDamage()
-    newPlayer2Health = player2.health - (player1Damage)
-    player2.health = newPlayer2Health
-    printPlayerStats(_player2name, _robot2, _weapon2, newPlayer2Health, 2)
-    checkHealth(newPlayer1Health, newPlayer2Health)
-  }
+  // function showImage (){
 
-  function evadeAttack(){
-    var evadeAttacks = Math.round(Math.random()*2)
-    if (player1.weapon.evasion > 0){
-      if (evadeAttacks === 1){
-
-        player1.weapon.evasion --
-      }
-    } else if (player2.weapon.evasion > 0){
-      if (evadeAttacks === 1){
-        
-        player2.weapon.evasion --
-      }
-    } else {
-      attack()
-    }
-  }
-
-  // function attack2 (){
-  //   $(".attack").on("click", attack(player2, player1))
-  //   //
   // }
 
+  function battleFieldAttack (){
+    console.log("inside battle function")
+    player1.attack(player2)
+    player2.attack(player1)
+    console.log("player 1 health", player1.health)
+    console.log("player 2 health", player2.health)
+    updateHealth(player1.health, 1)
+    updateHealth(player2.health, 2)
+    checkHealth(player1.health, player2.health)
+  }
+
+  // function evadeAttack(){
+  //   var evadeAttacks = Math.round(Math.random()*2)
+  //   if (player1.weapon.evasion > 0){
+  //     if (evadeAttacks === 1){
+
+  //       player1.weapon.evasion --
+  //     }
+  //   } else if (player2.weapon.evasion > 0){
+  //     if (evadeAttacks === 1){
+        
+  //       player2.weapon.evasion --
+  //     }
+  //   } else {
+  //     attack()
+  //   }
+  // }
 
   function showAttack(damage1, player1Name, damage2, player2Name){
     $('#damageModal').modal("show")
@@ -152,13 +153,8 @@ var BattleDome = (function(controller){
       $(".modal-title").html(`${player1.name} is the Winner!`)
       $(".modal-body").html(`<p> ${player1.name}'s health: ${player1.health}</p> <p> ${player2.name} health: ${player2.health}</p>`)
     } else {
-      showAttack(player2Damage, player1.name, player1Damage, player2.name)
+      showAttack(player1.damage, player1.name, player2.damage, player2.name)
     }
-  }
-
-  function randomDamage(){
-    var randomDamage = Math.round(Math.random()*20)-10
-    return randomDamage
   }
 
   controller.getPlayer1Weapon = function(e){
