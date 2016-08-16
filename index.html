@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Robot Battledome </title>
+  <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="quiz.css">
+</head>
+<body>
+<header>
+  <h1> Robot Battledome </h1>
+</header>
+<section id="player-setup" class="card card--name">
+      <div class="card__prompt">
+        <div>RECORD YOUR NAME, PLAYER 1</div>
+        <div class="field">
+          <input type="text" autofocus="true" id="player1-name" class="field__textinput">
+        </div>
+      </div>
+
+      <div class="card__button">
+        <a class="card__link btn btn--big btn--orange name1"
+           href="#"
+           next="card--robots">
+          <span class="btn__prompt">></span>
+          <span class="btn__text">Begin</span>
+        </a>
+      </div>
+</section>
+<section id="player1View" class="card card--robots">
+      <div class="card__prompt">
+        <div>
+          <a class="card__back btn btn--small"
+             href="#"
+             previous="card--name">
+            <span class="btn__prompt">&lt;</span>
+            <span class="btn__text">Back</span>
+          </a>
+        </div>
+      </div>
+     <div class="container-fluid player">
+      <div class="row playerSelection">
+        <h3> Player 1: <small> Choose your robot </small> </h3>
+      </div>
+      <div class="rollingRobots row robotRow">
+        <h3> Robots on Wheels </h3>
+        <div class="Rosie robot1 robot col-sm-6">
+        </div>
+        <div class="WallE robot1 robotcol-sm-6">
+        </div>
+      </div>
+      <div class="walkingRobots row robotRow">
+        <h3> Bi-pedal Robots </h3>
+        <div class="C3PO robot1 robot col-sm-6">
+        </div>
+        <div class="Hector robot1 robot col-sm-6">
+        </div>
+      </div>
+      <div class="flyingRobots row robotRow">
+        <h3> Flying Robots </h3>
+        <div class="Drone robot1 robot col-sm-6">
+        </div>
+        <div class="Parrot robot1 robot col-sm-6">
+        </div>
+      </div>
+      <div class="card__button">
+          <a class="card__link btn btn--big btn--orange weapon--button1"
+             href="#"
+             next="card--weapons">
+            <span class="btn__prompt">></span>
+            <span class="btn__text">Go to Weapons</span>
+          </a>
+      </div>
+    </div>
+</section>
+<section id="class-select" class="card card--weapons">
+    <div>
+        <a class="card__back btn btn--small"
+           href="#"
+           previous="card--robots">
+          <span class="btn__prompt">&lt;</span>
+          <span class="btn__text">Back</span>
+        </a>
+    </div>
+
+    <div class="container-fluid weapon">
+      <div class="row weaponSelection">
+        <h3> Player 1: <small> Choose your Weapon </small> </h3>
+      </div>
+      <div class="RosieWeapons weapons row hidden">
+      </div>
+      <div class="WallEWeapons weapons row hidden">
+      </div>
+      <div class="C3POWeapons weapons row hidden">
+      </div>
+      <div class="HectorWeapons weapons row hidden">
+      </div>
+      <div class="DroneWeapons weapons row hidden">
+      </div>
+      <div class="ParrotWeapons weapons row hidden">
+      </div>
+      <div class="card__button">
+        <a class="card__link btn btn--big btn--orange"
+           href="#"
+           next="card--name2">
+          <span class="btn__prompt">></span>
+          <span class="btn__text">Go to Player 2</span>
+        </a>
+      </div>
+    </div>
+</section>
+ <section id="class-select" class="card card--name2">
+    <div>
+        <a class="card__back btn btn--small"
+           href="#"
+           previous="card--weapons">
+          <span class="btn__prompt">&lt;</span>
+          <span class="btn__text">Back</span>
+        </a>
+    </div>
+    <div class="card__prompt">
+      <div>RECORD YOUR NAME, PLAYER 2</div>
+        <div class="field">
+          <input type="text" autofocus="true" id="player2-name" class="field__textinput">
+        </div>
+      <div class="card__button">
+        <a class="card__link btn btn--big btn--orange name2"
+           href="#"
+           next="card--robots2">
+          <span class="btn__prompt">></span>
+          <span class="btn__text">Begin</span>
+        </a>
+      </div>
+    </div>
+  </section>
+  <section id="player2View" class="card card--robots2">
+      <div class="card__prompt">
+        <div>
+          <a class="card__back btn btn--small"
+             href="#"
+             previous="card--name">
+            <span class="btn__prompt">&lt;</span>
+            <span class="btn__text">Back</span>
+          </a>
+        </div>
+      </div>
+
+    <div class="container-fluid player">
+      <div class="row playerSelection">
+        <h3> Player 2: <small> Choose your Robot </small> </h3>
+      </div>
+      <div class="rollingRobots row robotRow">
+        <h3> Robots on Wheels </h3>
+        <div class="Rosie robot2 robot col-sm-6">
+        </div>
+        <div class="WallE robot2 robot col-sm-6">
+        </div>
+      </div>
+      <div class="walkingRobots row robotRow">
+        <h3> Bi-pedal Robots </h3>
+        <div class="C3PO robot2 robot col-sm-6">
+        </div>
+        <div class="Hector robot2 robot col-sm-6">
+        </div>
+      </div>
+      <div class="flyingRobots row robotRow">
+        <h3> Flying Robots </h3>
+        <div class="Drone robot2 robot col-sm-6">
+        </div>
+        <div class="Parrot robot2 robot col-sm-6">
+        </div>
+      </div>
+      <div class="card__button">
+        <a class="card__link btn btn--big btn--orange weapon--button2"
+           href="#"
+           next="card--weapons2">
+          <span class="btn__prompt">></span>
+          <span class="btn__text">Choose Weapon</span>
+        </a>
+      </div>
+    </div>
+</section>
+<section id="class-select" class="card card--weapons2">
+    <div>
+        <a class="card__back btn btn--small"
+           href="#"
+           previous="card--robots2">
+          <span class="btn__prompt">&lt;</span>
+          <span class="btn__text">Back</span>
+        </a>
+    </div>
+
+    <div class="container-fluid weapon">
+      <div class="row weaponSelection">
+        <h3> Player 2: <small> Choose your Weapon </small> </h3>
+      </div>
+      <div class="RosieWeapons2 weapons row hidden">
+      </div>
+      <div class="WallEWeapons2 weapons row hidden">
+      </div>
+      <div class="C3POWeapons2 weapons row hidden">
+      </div>
+      <div class="HectorWeapons2 weapons row hidden">
+      </div>
+      <div class="DroneWeapons2 weapons row hidden">
+      </div>
+      <div class="ParrotWeapons2 weapons row hidden">
+      </div>
+      <div class="card__button">
+        <a class="card__link btn btn--big btn--orange battle--button"
+           href="#"
+           next="card--battle">
+          <span class="btn__prompt">></span>
+          <span class="btn__text">Battle</span>
+        </a>
+      </div>
+    </div>
+</section>
+<section id="battleView" class="battleView card card--battle">
+  <div class="row">
+    <div class="col-xs-4 playerStats">
+      <div class="player1bot"> Player 1 </div>
+      <div class="player1Health"></div>
+      <div class="player1Progress"></div>
+    </div>
+    <div class="col-xs-4 battlefield">
+      <h2> Battle Field </h2>
+      <div class="ouch"></div>
+      <div class="stats"></div>
+    </div>
+     <div class="col-xs-4 playerStats">
+      <div class="player2bot"> Player 2 </div>
+      <div class="player2Health"></div>
+      <div class="player2Progress"></div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="attackButton col-md-12">
+      <button class="attack"> Attack! </button>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="modal fade" id="damageModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+      <div class="modal-header">
+          <h4 class="modal-title"></h4>
+        </div>
+        <div class="modal-body">
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+</section>
+<section>
+  <div class="modal fade" id="endModal" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Modal title</h4>
+        </div>
+        <div class="modal-body">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary restart">Re-start</button>
+          <button type="button" class="btn btn-primary fightAgain">Fight Again</button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+</section>
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="javascript/constructor.js"></script>
+<script type="text/javascript" src="javascript/robots.js"></script>
+<script type="text/javascript" src="javascript/printItems.js"></script>
+<script type="text/javascript" src="javascript/weapons.js"></script>
+<script type="text/javascript" src="javascript/cards.js"></script>
+<script type="text/javascript" src="javascript/controller.js"></script>
+<script type="text/javascript" src="javascript/loadRobots.js"></script>
+</body>
+</html>

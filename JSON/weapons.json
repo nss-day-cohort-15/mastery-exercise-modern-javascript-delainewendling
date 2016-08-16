@@ -1,0 +1,150 @@
+{
+  "weapons": [
+    {
+      "weaponName": "Duster",
+      "weaponImg": "images/duster.jpg",
+      "description": "The Duster deals a damage between 20 and 25 and increases protection by 51",
+      "weaponContainer": "RosieWeapons"
+    },
+    {
+      "weaponName": "Broom",
+      "weaponImg": "images/broom.jpg",
+      "description": "The Broom deals a damage between 22 and 24 and increases protection by 50",
+      "weaponContainer": "RosieWeapons"
+    },
+    {
+      "weaponName": "Mop",
+      "weaponImg": "images/mop.jpg",
+      "description": "The Mop deals a damage between 20 and 29 and increases protection by 47",
+      "weaponContainer": "RosieWeapons"
+    },
+    {
+      "weaponName": "Spray-Cleaner",
+      "weaponImg": "images/spraycleaner.jpg",
+      "description": "The Spray Cleaner deals a damage between 21 and 30 and increases protection by 45",
+      "weaponContainer": "RosieWeapons"
+    },
+    {
+      "weaponName": "Aluminum-Can",
+      "weaponImg": "images/aluminumcan.jpg",
+      "description": "The Aluminum Can deals a damage between 20 and 27 and increases protection by 50",
+      "weaponContainer": "WallEWeapons"
+    },
+    {
+      "weaponName": "Battery-Acid",
+      "weaponImg": "images/batteryacid.jpg",
+      "description": "Battery Acid deals a damage between 21 and 25 and increases protection by 48",
+      "weaponContainer": "WallEWeapons"
+    },
+    {
+      "weaponName": "Rusty-Knife",
+      "weaponImg": "images/rustyknife.jpg",
+      "description": "Battery Acid deals a damage between 23 and 29 and increases protection by 42",
+      "weaponContainer": "WallEWeapons"
+    },
+    {
+      "weaponName": "Banana-Peel",
+      "weaponImg": "images/bananapeel.jpg",
+      "description": "Battery Acid deals a damage between 21 and 30 and increases protection by 45",
+      "weaponContainer": "WallEWeapons"
+    },
+    {
+      "weaponName": "Lightsaber",
+      "weaponImg": "images/lightsaber.jpg",
+      "description": "The Lightsaber deals a damage between 35 and 41, increases protection by 20, and allows you to escape up to one time during battle",
+      "weaponContainer": "C3POWeapons"
+    },
+    {
+      "weaponName": "Blaster",
+      "weaponImg": "images/blaster.jpg",
+      "description": "The Blaster deals a damage between 30 and 40 and increases protection by 35",
+      "weaponContainer": "C3POWeapons"
+    },
+    {
+      "weaponName": "Slugthrower",
+      "weaponImg": "images/slugthrower.jpg",
+      "description": "The Slugthrower deals a damage between 38 and 45 and increases protection by 30",
+      "weaponContainer": "C3POWeapons"
+    },
+    {
+      "weaponName": "Phaser",
+      "weaponImg": "images/phaser.jpg",
+      "description": "The Phaser deals a damage between 32 and 45 and increases protection by 40",
+      "weaponContainer": "C3POWeapons"
+    },
+    {
+      "weaponName": "Flame-Thrower",
+      "weaponImg": "images/flamethrower.jpg",
+      "description": "The Flame Thrower deals a damage between 33 and 41 and allows you to avoid damage up to twice during battle",
+      "weaponContainer": "HectorWeapons"
+    },
+    {
+      "weaponName": "Cross-Bow",
+      "weaponImg": "images/crossbow.jpg",
+      "description": "The Cross Bow deals a damage between 35 and 39 and increases protection by 40",
+      "weaponContainer": "HectorWeapons"
+    },
+    {
+      "weaponName": "Broad-Sword",
+      "weaponImg": "images/broadSword.jpg",
+      "description": "The Flame Thrower deals a damage between 30 and 38 and increases protection by 45",
+      "weaponContainer": "HectorWeapons"
+    },
+    {
+      "weaponName": "Rifle",
+      "weaponImg": "images/rifle.jpg",
+      "description": "The Rifle deals a damage between 33 and 42 and increases protection by 35",
+      "weaponContainer": "HectorWeapons"
+    },
+    {
+      "weaponName": "Bazooka",
+      "weaponImg": "images/bazooka.jpg",
+      "description": "The Bazooka deals a damage between 42 and 50 and increases protection by 25",
+      "weaponContainer": "DroneWeapons"
+    },
+    {
+      "weaponName": "Machine-Gun",
+      "weaponImg": "images/machinegun.jpg",
+      "description": "The Machine Gun deals a damage between 41 and 49 and increases protection by 30",
+      "weaponContainer": "DroneWeapons"
+    },
+    {
+      "weaponName": "Dynamite",
+      "weaponImg": "images/dynamite.jpg",
+      "description": "The Bazooka deals a damage between 40 and 48, increases protection by 10, and allows you to avoid up to one attack during battle",
+      "weaponContainer": "DroneWeapons"
+    },
+    {
+      "weaponName": "Bomb",
+      "weaponImg": "images/bomb.jpg",
+      "description": "The Bomb deals a damage between 43 and 47 and increases protection by 40",
+      "weaponContainer": "DroneWeapons"
+    },
+    {
+      "weaponName": "Grenade",
+      "weaponImg": "images/grenade.jpg",
+      "description": "The Grenade deals a damage between 41 and 46 and increases protection by 37",
+      "weaponContainer": "ParrotWeapons"
+    },
+    {
+      "weaponName": "Laser-Gun",
+      "weaponImg": "images/lasergun.jpg",
+      "description": "The Laser Gun deals a damage between 40 and 49 and increases protection by 30",
+      "weaponContainer": "ParrotWeapons"
+    },
+    {
+      "weaponName": "Pistol",
+      "weaponImg": "images/pistol.jpg",
+      "description": "The Pistol deals a damage between 42 and 46 and increases protection by 40",
+      "weaponContainer": "ParrotWeapons"
+    },
+    {
+      "weaponName": "Chemical-Drop",
+      "weaponImg": "images/chemicaldrop.jpg",
+      "description": "The Chemical Drop deals a damage between 40 and 50, increases protection by 5, and allow you to escape up to one attack during battle",
+      "weaponContainer": "ParrotWeapons"
+    }
+  ]
+}
+
+
