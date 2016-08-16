@@ -28,6 +28,7 @@ h1 {
 .hidden {
   display: none;
 }
+
 .selectedWeapons {
   display: block;
 }
@@ -66,22 +67,10 @@ h1 {
   margin: 10px auto;
 }
 
-
-/*.battlefield {
-  background-color: rgba(25, 173, 110, 0.6);
-  box-shadow: 2px 2px 2px 5px#aaa;
-  border-radius: 5px;
-  height: 500px;
-  max-width: 100%;
-}*/
-
 .attack {
   display: block;
-  margin: 95% auto 2%;
-  font-size: 1.5em;
-  padding: 2%;
+  margin: 30px auto;
 }
-
 
 .selectedItem {
   height: 250px;
@@ -90,21 +79,23 @@ h1 {
   border-radius: 5px;
 }
 
-/*.description {
-  position: absolute; 
-  top: 0%; 
-  left: 25%; 
-  z-index: 10;
-  display: block;
-  height: 200px;
-  max-width: 50%;
-  margin: 0 auto;
-  background-color: rgba(112, 170, 211, 0.5);
-  padding: 20px;
-}*/
+.robotRow {
+  margin: 20px;
+}
 
 .popover-content {
   z-index: 10;
 }
 
+.playerImg {
+  height: 200px;
+  max-width: 100%;
+}
 
+.ouch {
+  margin-top: 10%;
+}
+
+.playerStats {
+  padding: 5%;
+}

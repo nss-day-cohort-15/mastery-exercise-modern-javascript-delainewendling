@@ -74,6 +74,7 @@ var BattleDome = (function(controller){
     console.log("player 1", player1);
     console.log("player 1 damage", player1.damage);
     printPlayerStats(_player1name, _robot1, _weapon1, player1.health, 1);
+    createProgressBar(player1, "player1")
     createPlayer2();
   };
 
@@ -88,11 +89,14 @@ var BattleDome = (function(controller){
     console.log("player 2", player2);
     console.log("player 2 damage", player2.damage);
     printPlayerStats(_player2name, _robot2, _weapon2, player2.health, 2);
+    createProgressBar(player2, "player2")
+    showImage(_robot1, _robot2)
   };
 
 
   function printPlayerStats (name, robot, weapon, playerHealth, number){
-      $(`.player${number}bot`).html(`<h1> ${name} </h1> <p> A ${robot} robot wielding a ${weapon}.`);
+      $(`.player${number}bot`).html("")
+      $(`.player${number}bot`).append(`<h1> ${name} </h1> <p> A ${robot} robot wielding a ${weapon}.`);
       $(`.player${number}Health`).html(`<h3> HEALTH: <small> ${playerHealth} </h3>`);
   };
 
@@ -100,9 +104,12 @@ var BattleDome = (function(controller){
     $(`.player${number}Health`).html(`<h3> HEALTH: <small> ${playerHealth} </h3>`);
   };
 
-  // function showImage (){
-
-  // }
+  function showImage (robot1, robot2){
+    var robot_1 = robot1.toLowerCase()
+    var robot_2 = robot2.toLowerCase()
+    $('.player1bot').append(`<img src="images/${robot_1}.jpg" class="playerImg">`)
+    $('.player2bot').append(`<img src="images/${robot_2}.jpg" class="playerImg">`)
+  }
 
   function battleFieldAttack (){
     console.log("inside battle function");
@@ -112,21 +119,42 @@ var BattleDome = (function(controller){
     console.log("player 2 health", player2.health);
     updateHealth(player1.health, 1);
     updateHealth(player2.health, 2);
+    createProgressBar(player1, "player1")
+    createProgressBar(player2, "player2")
     checkHealth(player1.health, player2.health);
   };
 
   function restart(){
     location.reload()
+    $(".ouch").html("");
+    $(".stats").html("");
   }
 
   function fightAgain(){
     $('#endModal').modal("hide");
     player1.health = player1.initialHealth
     player2.health = player2.initialHealth
+    $(".ouch").html("");
+    $(".stats").html("");
     printPlayerStats(_player1name, _robot1, _weapon1, player1.health, 1)
     printPlayerStats(_player2name, _robot2, _weapon2, player2.health, 2)
+    createProgressBar(player1, "player1")
+    createProgressBar(player2, "player2")
+    showImage(_robot1, _robot2)
   }
 
+  function createProgressBar (player, name) {
+    $(`.${name}Progress`).html("")
+    var totalHealth = `${name}Health`
+    if (name === "player1"){
+      playerHealthPercentage = Math.floor(player1.health/player1.initialHealth*100)
+    } else {
+      playerHealthPercentage = Math.floor(player2.health/player2.initialHealth*100)
+    }
+    $(`.${name}Progress`).append(`<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="${player.health}" aria-valuemin="0" aria-valuemax="${player.initialHealth}" id="${name}ProgressBar" style="width: ${playerHealthPercentage}%">
+      <span> ${playerHealthPercentage}% Health </span>
+      </div>`)
+  }
   // function evadeAttack(){
   //   var evadeAttacks = Math.round(Math.random()*2)
   //   if (player1.weapon.evasion > 0){
@@ -144,10 +172,8 @@ var BattleDome = (function(controller){
   // }
 
   function showAttack(damage1, player1Name, damage2, player2Name){
-    $('#damageModal').modal("show");
-    $(".modal-title").html("<h2> Ouch! </h2>");
-    $(".modal-body").html(`<p> ${player1Name} dealt ${damage1} damage </p> <p> ${player2Name} dealt ${damage2} damage </p>`);
-    // $('#damageModal').on('hidden.bs.modal', nextFunction)
+    $(".ouch").html("<h2> Ouch! </h2>");
+    $(".stats").html(`<p> ${player1Name} dealt ${damage1} damage </p> <p> ${player2Name} dealt ${damage2} damage </p>`);
   };
 
   function checkHealth(player1Health, player2Health){

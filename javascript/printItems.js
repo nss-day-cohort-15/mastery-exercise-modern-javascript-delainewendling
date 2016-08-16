@@ -13,10 +13,10 @@ var BattleDome = (function(robots){
 
   robots.printWeapons = function(weaponArray){
     weaponArray.forEach((weapon)=>{
-      $(`.${weapon.weaponContainer}`).append(`<div class="col-xsm-6"><h4>${weapon.weaponName}</h4><img src="${weapon.weaponImg}" class="${weapon.weaponName} robotImg weapon weapon1" data-container=".${weapon.weaponName}" data-toggle="popover" data-placement="top" data-content="${weapon.description}"></div>`);
+      $(`.${weapon.weaponContainer}`).append(`<div class="col-md-6 weaponBox"><h4>${weapon.weaponName}</h4><img src="${weapon.weaponImg}" class="${weapon.weaponName} robotImg weapon weapon1" data-container=".${weapon.weaponName}" data-toggle="popover" data-placement="top" data-content="${weapon.description}"></div>`);
     })
     weaponArray.forEach((weapon)=>{
-      $(`.${weapon.weaponContainer}2`).append(`<div class="col-sm-6"><h4>${weapon.weaponName}</h4><img src="${weapon.weaponImg}" class="${weapon.weaponName} robotImg weapon weapon2" data-container=".${weapon.weaponName}" data-toggle="popover" data-placement="top" data-content="${weapon.description}"></div>`);
+      $(`.${weapon.weaponContainer}2`).append(`<div class="col-md-6 weaponBox"><h4>${weapon.weaponName}</h4><img src="${weapon.weaponImg}" class="${weapon.weaponName} robotImg weapon weapon2" data-container=".${weapon.weaponName}" data-toggle="popover" data-placement="top" data-content="${weapon.description}"></div>`);
     });
     $(".weapon1").on("click", BattleDome.getPlayer1Weapon);
     $(".weapon2").on("click", BattleDome.getPlayer2Weapon);

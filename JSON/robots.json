@@ -7,27 +7,27 @@
     },
     {
     "robotName": "WallE",
-    "robotImg": "images/wallE.jpg",
+    "robotImg": "images/walle.jpg",
     "description": "Wall-E's health is between 100 and 150, his strength is between 5 and 8, and he has access to the Aluminum Can, Battery Acid, Rusty Knife, and Banana Peel weapons"
     },
     {
     "robotName": "C3PO",
-    "robotImg": "images/C3PO.png",
+    "robotImg": "images/c3po.jpg",
     "description": "C3PO's health is between 80 and 120, his strength is between 4 and 6, and he has access to the Lightsaber, Blaster, Slugthrower, and Phaser weapons"
     },
     {
     "robotName": "Hector",
-    "robotImg": "images/biPed.jpg",
+    "robotImg": "images/hector.jpg",
     "description": "Hector's health is between 80 and 120, his strength is between 5 and 7, and he has access to the Rifle, Flamethrower, Cross Bow, Broad Sword weapons"
     },
     {
     "robotName": "Drone",
-    "robotImg": "images/blueDrone.jpg",
+    "robotImg": "images/drone.jpg",
     "description": "D'rone's health is between 70 and 90, his strength is between 8 and 12, and he has access to the Bazooka, Machine Gun, Dynamite, and Bomb weapons"
     },
     {
     "robotName": "Parrot",
-    "robotImg": "images/parrotDrone.jpg",
+    "robotImg": "images/parrot.jpg",
     "description": "Parrot's health is between 70 and 90, his strength is between 7 and 14, and she has access to the Grenade, Laser Gun, Pistol, and Chemical Drop weapons"
     }
   ]
